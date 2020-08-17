@@ -1,0 +1,31 @@
+import java.util.*;
+
+class main
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+while(sc.hasNext())
+{
+int a=sc.nextInt();
+int b=sc.nextInt();
+int max=0;
+System.out.print(a+" "+b+" ");
+if(a>b){int c;c=b; b=a; a=c;}
+for(int i=a;i<=b;i++)
+if( zzz(i) > max ) max=zzz(i);
+
+System.out.println(max);       
+}
+}
+static int zzz(int q)
+{  
+int f=1;
+while(q!=1)
+{
+if(q%2 == 1){q=3*q+1; f++ ;}
+else {q/=2; f++;}                                     
+}
+return f;
+}
+}		

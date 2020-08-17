@@ -1,0 +1,49 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+struct num
+{
+    int n;
+    int r;
+    int odd;
+}number[100000];
+
+bool cmp(num A, num B)
+{
+    if(A.r!=B.r)
+        return A.r<B.r;
+    
+    int count = A.odd+B.odd;
+    if(count==2)//兩個奇數 大的奇數在前面 
+        return A.n>B.n;
+    if(count==0)//兩個偶數 大的偶數在後面
+        return A.n<B.n;
+    
+    //一奇數一偶數 奇數在前面
+    return A.odd; 
+    
+}
+
+int main()
+{
+    int N,M;
+    
+    while(scanf("%d %d",&N,&M),N!=0&&M!=0)
+    {
+        for(int i=0; i<N; i++)
+        {
+            scanf("%d",&number[i].n);
+            number[i].r = number[i].n%M;
+            number[i].odd = abs(number[i].n%2);
+        }
+        
+        sort(number, number+N, cmp);
+        
+        
+        printf("%d %d\n",N,M);
+        for(int i=0; i<N; i++)
+            printf("%d\n",number[i].n);
+    }
+    puts("0 0");
+    
+}

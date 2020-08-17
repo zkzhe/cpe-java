@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int cases = sc.nextInt();
+		
+		while(cases-- > 0) 
+		{
+			int s = sc.nextInt();
+			int d = sc.nextInt();
+			int x, y;
+			
+			x = (s + d) / 2;
+			y = s - x;
+			
+			if((s + d) % 2 == 1 || x < 0 || y < 0) 
+				System.out.println("impossible");
+			else if(x > y)
+				System.out.printf("%d %d\r\n", x, y);
+			else
+				System.out.printf("%d %d\r\n", y, x);
+		}
+	}
+}

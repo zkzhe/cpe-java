@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int cases = sc.nextInt();
+		
+		for(int i = 1; i <= cases; ++i) 
+		{
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			int sum=0;
+			for(int z=a;z<=b;z++)
+			{
+			if(z%2 ==1 ) sum+=z;
+			}
+			System.out.printf("Case %d: %d\r\n", i, sum);
+		}
+	}
+}

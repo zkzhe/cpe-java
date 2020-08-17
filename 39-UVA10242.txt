@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class main 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);		
+		while(sc.hasNext()) 
+		{	
+		Rood a=new Rood(sc.nextDouble(),sc.nextDouble());
+		Rood b=new Rood(sc.nextDouble(),sc.nextDouble());
+		Rood c=new Rood(sc.nextDouble(),sc.nextDouble());
+		Rood d=new Rood(sc.nextDouble(),sc.nextDouble());	
+		Rood e=new Rood();
+		e.x=a.x+b.x+c.x+d.x; e.y=a.y+b.y+c.y+d.y;
+		if((a.x==c.x&&a.y==c.y)||(a.x==d.x&&a.y==d.y))
+		{e.x=e.x-3*(a.x);e.y=e.y-3*(a.y);}
+		else
+		{e.x=e.x-3*(b.x);e.y=e.y-3*(b.y);}
+		System.out.printf("%.3f %.3f\r\n",e.x,e.y);
+		}	
+	}
+	 static class Rood
+		{
+		public double x; public double y;
+		public Rood(double a,double b)
+		{
+		x=a;
+		y=b;
+		}
+		public Rood()
+		{
+		}
+		}
+}
+
+
+
+import java.util.Scanner;
+public class main 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);		
+		while(sc.hasNext()) 
+		{	
+		double x1=sc.nextDouble(); double y1=sc.nextDouble();
+		double x2=sc.nextDouble(); double y2=sc.nextDouble();
+		double x3=sc.nextDouble(); double y3=sc.nextDouble();
+		double x4=sc.nextDouble(); double y4=sc.nextDouble();
+	    double x5=x1+x2+x3+x4;     double y5=y1+y2+y3+y4; 
+	
+		if((x1==x3&&y1==y3)||(x1==x4&&y1==y4))
+		{x5=x5-3*(x1);y5=y5-3*(y1);}
+		else
+		{x5=x5-3*(x2);y5=y5-3*(y2);}
+		System.out.printf("%.3f %.3f\r\n",x5,y5);
+		}	
+	} 
+}

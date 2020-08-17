@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) 
+		{
+			String str = sc.nextLine();
+			int sum = 0, max = 1, i;
+			
+			for(i = 0; i < str.length(); ++i) 
+			{
+				int digit = 0;
+				
+				if(str.charAt(i) >= 97 && str.charAt(i) <= 122) //a-z
+					digit = str.charAt(i) - 'a' + 36;
+				else if(str.charAt(i) >= 65 && str.charAt(i) <= 90) //A-Z
+					digit = str.charAt(i) - 'A' + 10;
+				else if(str.charAt(i) >= 48 && str.charAt(i) <= 57) //0-9
+					digit = str.charAt(i)- '0';
+				
+				sum += digit;
+				if(digit > max)
+					max = digit;
+			}
+			for(i = max; i < 62; ++i) 
+			{
+				if(sum % i == 0) 
+				{
+					System.out.println(i+1);
+					break;
+				}
+			}
+			if(i == 62)
+				System.out.println("such number is impossible!");
+		}
+	}
+}

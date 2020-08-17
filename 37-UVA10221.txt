@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	
+
+		while(sc.hasNext()) 
+		{
+			int z=sc.nextInt();
+			int x=z+6440;
+			double a=sc.nextInt();
+			String b=sc.next();
+			if(b.equals("min")) a/=60;
+			else a=Math.min(a,360-a);
+			
+			double q=2*x*Math.PI*(a/360);double w=2*x*Math.sin(a*Math.PI/360);
+			System.out.printf("%.6f %.6f\r\n",q,w);
+		}
+	}
+}

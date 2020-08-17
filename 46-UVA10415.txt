@@ -1,0 +1,49 @@
+import java.util.*;
+import java.util.HashMap;
+public class main{
+    public static void main(String[] args) 
+    {
+     Scanner sc=new Scanner(System.in);
+     int f=sc.nextInt();
+     sc.nextLine();
+     HashMap<Character,String> map=new  HashMap<Character,String>();
+     	map.put('c', "0111001111");
+		map.put('d', "0111001110");
+		map.put('e', "0111001100");
+		map.put('f', "0111001000");
+		map.put('g', "0111000000");
+		map.put('a', "0110000000");
+		map.put('b', "0100000000");
+		map.put('C', "0010000000");
+		map.put('D', "1111001110");
+		map.put('E', "1111001100");
+		map.put('F', "1111001000");
+		map.put('G', "1111000000");
+		map.put('A', "1110000000");
+		map.put('B', "1100000000");
+     while(f-->0)
+     {
+     String current="0000000000";//現在按的
+     String now=sc.nextLine();
+     int a[]=new int [10];//總次數
+     for(int i=0;i<now.length();i++)
+     {
+     String finger=map.get(now.charAt(i));
+     for(int j=0;j<10;j++)
+     {
+     if(current.charAt(j)=='0'&&finger.charAt(j)=='1')
+     a[j]++;   
+     }
+     current=finger;
+     }
+     for(int i=0;i<9;i++)
+     {
+     System.out.print(a[i]+" ");
+     
+     }
+     System.out.println(a[9]);
+     
+     
+     }   
+    }
+}

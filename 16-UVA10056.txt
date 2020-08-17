@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class main{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		int cases = sc.nextInt();		
+		while(cases-- > 0) 
+		{
+		  	int a=sc.nextInt();
+		  	double p=sc.nextDouble();
+		  	double q=1-p;
+		  	int t=sc.nextInt();
+			if(p == 0.0) 
+			{
+				System.out.println("0.0000");
+				continue;
+			}
+		    double win=(Math.pow(q,t-1)*p)/(1-Math.pow(q,a));
+			System.out.printf("%.4f\r\n",win);
+		}
+	}
+}

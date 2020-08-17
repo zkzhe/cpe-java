@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) 
+		{
+			String str=sc.next();
+			if(str.equals("0")) break;
+			System.out.print(str);
+			int degree=0;
+		
+			do{
+			int sum=0;
+			for(int i=0;i<str.length();i++)
+			{
+			sum+=str.charAt(i)-'0';			
+			}
+			degree++;
+		    	str=Integer.toString(sum);
+			}while(str.length()>1);
+			if(str.equals("9"))
+				System.out.printf(" is a multiple of 9 and has 9-degree %d.\r\n", degree);
+			else
+				System.out.printf(" is not a multiple of 9.\r\n");
+		}
+	}
+}

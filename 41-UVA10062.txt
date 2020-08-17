@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		boolean is = true;
+
+		while(sc.hasNext()) 
+		{
+			if(!is) System.out.println(); //case間空行
+			else is = false;
+			
+			String str = sc.nextLine();
+			int[] asc2 = new int[127];
+			for(int i = 0; i < str.length(); ++i) //計算次數
+				asc2[str.charAt(i)]++;
+			
+			int max = 0;
+			for(int i = 0; i < asc2.length; ++i) //最大次數
+				if(asc2[i] > max)
+					max = asc2[i];
+			
+		for(int i=1;i<=max;i++)
+		{
+		for(int a=122;a>0;a--)
+		{
+		if(asc2[a]==i) System.out.println(a+" "+i);
+		}
+		}
+		}
+	}
+}
