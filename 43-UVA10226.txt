@@ -1,0 +1,31 @@
+import java.util.*;
+import java.util.TreeMap;
+import java.util.Map;
+public class main
+{
+    public static void main(String[] args) 
+    {
+     Scanner sc=new Scanner(System.in);
+     int f=Integer.parseInt(sc.nextLine());
+     sc.nextLine(); 
+     	while(f-->0)
+     	{   double sum=0;
+     	    TreeMap<String,Integer> map=new TreeMap<String,Integer>();
+     		while(sc.hasNext())
+     		{
+     	
+     		String str=sc.nextLine();
+     		if(str.equals("")) break;
+     		if(map.containsKey(str)) map.put(str,map.get(str)+1);
+     		else map.put(str,1);
+     		sum++;
+     	    }
+     	 for(Map.Entry<String,Integer> entry:map.entrySet())
+     	 System.out.printf("%s %.4f\r\n",entry.getKey(),(double)entry.getValue()*100/sum);
+     	 
+			if(f != 0)
+				System.out.println();
+     	}
+          
+    }
+}

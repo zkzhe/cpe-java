@@ -1,0 +1,23 @@
+import java.util.*;
+import java.util.TreeMap;
+import java.util.Map;
+
+public class main
+{
+public static void main(String[] args) 
+{        
+Scanner sc=new Scanner(System.in);
+int f=sc.nextInt(); sc.nextLine();
+TreeMap<String,Integer> map=new TreeMap<String,Integer>();
+while(f-->0)
+{
+String line=sc.nextLine();
+String str=line.substring(0,line.indexOf(' '));
+if(map.containsKey(str)) map.put(str,map.get(str)+1);
+else map.put(str,1);
+}
+for(Map.Entry<String,Integer> entry: map.entrySet() )
+System.out.println(entry.getKey()+" "+entry.getValue());
+}
+}
+ 

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class main 
+{
+public static void main(String[] args) 
+{
+ Scanner sc = new Scanner(System.in);
+   while(sc.hasNext()) 
+   {
+   boolean is=true;
+   int f=sc.nextInt();
+   boolean Jolly []=new boolean[f-1];
+   int Num1=sc.nextInt();
+   	for(int i=0;i<f-1;i++)
+   	{
+   	int Num2=sc.nextInt();
+   	if(!is) continue; 
+   	int abs=Math.abs(Num1-Num2);
+   	if(abs == 0 ||  abs>f-1 || Jolly[abs-1])is=false;
+   	else Jolly[abs-1]=true;
+   
+   	Num1=Num2;
+   	}
+   if(is)
+   System.out.println("Jolly");
+   else
+   System.out.println("Not jolly");			
+   }
+}
+}

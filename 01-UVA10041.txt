@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.Arrays;
+public class main{
+    public static void main(String[] args) {
+   Scanner sc=new Scanner(System.in);
+   int f=sc.nextInt();
+   while(f-->0){
+   int sum=0;
+   int n=sc.nextInt();
+   int Number[]=new int[n];
+   for(int i=0;i<Number.length;i++)
+   Number[i]=sc.nextInt();
+   Arrays.sort(Number);
+   
+   int half=Number[n/2];
+   
+   for(int i=0;i<Number.length;i++)
+   sum += Math.abs(half- Number[i]);
+   
+   System.out.println(sum);
+   }
+   
+    }
+}

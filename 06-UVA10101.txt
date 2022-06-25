@@ -1,0 +1,30 @@
+import java.util.*;
+
+class main
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+int f=1;
+while(sc.hasNext())
+{
+long a=sc.nextLong();
+System.out.printf("%4d.",f);
+if(a == 0)System.out.print(" "+a);
+ban(a);
+f++;  
+ System.out.println();    
+}
+}
+static void ban(long n)
+{
+if(n>=10000000){ban(n/10000000); System.out.print(" kuti");n%=10000000;}
+if(n>=100000){ban(n/100000); System.out.print(" lakh");n%=100000;}
+if(n>=1000){ban(n/1000); System.out.print(" hajar");n%=1000;}
+if(n>=100){ban(n/100); System.out.print(" shata");n%=100;}
+if(n>0){System.out.print(" "+n);}
+
+
+}
+}
+		

@@ -1,0 +1,26 @@
+import java.util.*;
+public class main
+{
+public static void main(String[] args)
+{
+Scanner sc=new Scanner(System.in);
+	while(sc.hasNextInt())
+	{
+	int n=sc.nextInt();
+	if(n == 0)break;
+	System.out.println(aaa(n));
+	
+	
+	}
+}
+static int aaa(int a)
+{
+int sum=0;
+if(a<10) return a;
+while(a>0)
+{
+sum+=a%10; a/=10;
+}
+return aaa(sum);
+}        
+}

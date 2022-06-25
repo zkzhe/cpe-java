@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class main 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		int cases = sc.nextInt();
+		for(int i = 1; i <= cases; ++i)
+		{ if(i!=1)	System.out.println();
+			System.out.printf("Case %d:\r\n",i);
+			int bit[]=new int[36]; //儲存各個進位
+			for(int z=0;z<36;z++)
+			bit[z]=sc.nextInt();           
+			int cc=sc.nextInt();  //次數
+		   		while(cc-->0)
+		   		{
+		   		int aa=sc.nextInt();//這個
+		   		int cos[]=new int[37];
+		   		System.out.printf("Cheapest base(s) for number %d:",aa);
+		   		for(int q=2;q<37;q++)
+		   		{  for(int w=aa;w>0;w/=q)
+		   		   cos[q]+=bit[w%q]	;
+		   		}
+		   		int min= cos[2];
+		   		for(int o=2;o<37;o++)
+		   		if(cos[o]<min) min=cos[o];
+		   		
+		        for(int o=2;o<37;o++)
+		        if(cos[o]==min) 	System.out.print(" "+o);
+		        	System.out.println();
+				}
+			
+		}
+	}
+}

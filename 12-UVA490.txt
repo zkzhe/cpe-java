@@ -1,0 +1,33 @@
+import java.util.*;
+class main
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        String str[]=new String[50];
+        int count=0;
+        int max=0;
+        while(sc.hasNext())
+        str[count++]=sc.nextLine();
+        for(int i=0;i<count;i++)
+        if(str[i].length()>max) max=str[i].length();
+        
+        for(int i=0;i<max;i++)
+        {
+        	for(int j=count-1;j>=0;j--)
+        	{
+        	try{
+        	   System.out.print(str[j].charAt(i));
+        	   }
+        	   catch(Exception e)
+        	   {
+        	   if(j>0) System.out.print(' ');
+        	   }
+        	}
+        
+        System.out.println();
+        }
+   
+        
+    }
+}

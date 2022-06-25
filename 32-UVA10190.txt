@@ -1,0 +1,24 @@
+
+
+
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) 
+		{ 
+			int a=sc.nextInt();
+			String d=Integer.toString(a);
+		    int b=sc.nextInt();
+		    if(b<=1 || b>a){ System.out.println("Boring!");	continue;}
+		    StringBuilder str=new StringBuilder();
+		    for( ; a%b == 0 && a>b ;a/=b)
+		    str.append(" "+a/b);
+		    if(a==b) System.out.println(d+str+" "+1);
+		    else System.out.println("Boring!");
+		}
+	}
+}

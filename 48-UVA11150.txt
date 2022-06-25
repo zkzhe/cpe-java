@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		while(sc.hasNext()) 
+		{
+		  int drink=sc.nextInt();
+		  int a=drink; //空瓶
+		  
+		  while(a>1)
+		  {
+		  if(a == 2) a=3;
+		  drink+=a/3;
+		  a=a/3+a%3;
+		  }
+			System.out.println(drink);
+		}
+	}
+}

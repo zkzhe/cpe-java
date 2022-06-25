@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class main {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+int count =sc.nextInt();
+while(count-->0){
+int fib[]=new int[1000];
+fib[0]=0;fib[1]=1; 
+for(int i=2;i<1000;i++)
+fib[i]= fib[i-1]+fib[i-2];
+
+int num=sc.nextInt();
+System.out.print(num+" = ");
+int i;
+
+for(i=2;fib[i]<=num;i++);
+i--;
+for(int j=i;j>1;j--)
+{
+if(num>=fib[j])
+{
+num-=fib[j];
+System.out.print("1"); 
+}
+else System.out.print("0");
+}
+System.out.print(" (fib)");
+System.out.println();
+}
+}
+}
